@@ -1,0 +1,157 @@
+'\" t
+.\"     Title: cheat
+.\"    Author: rbt-ylee <ylee@bodhilinux.com>
+.\"      Date: 02 August 2014
+.\"    Manual: CHEAT
+.\"    Source: Linux
+.\"  Language: English
+.\"
+.\"  NOTE: Some material for this man page has been taken from the README file 
+.\"        on cheat's github page, https://github.com/chrisallenlane/cheat
+.\" 
+.TH "CHEAT" 1 "02 August 2014" "2.0.9" "cheat man page"
+.\" -----------------------------------------------------------------
+.\" * Define some portability stuff
+.\" -----------------------------------------------------------------
+.\" ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.\" http://bugs.debian.org/507673
+.\" http://lists.gnu.org/archive/html/groff/2009-02/msg00013.html
+.\" ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.ie \n(.g .ds Aq \(aq
+.el       .ds Aq '
+.\" -----------------------------------------------------------------
+.\" * set default formatting
+.\" -----------------------------------------------------------------
+.\" disable hyphenation
+.nh
+.\" disable justification (adjust text to left margin only)
+.ad l
+.\" -----------------------------------------------------------------
+.\" * MAIN CONTENT STARTS HERE *
+.\" -----------------------------------------------------------------
+.SH NAME
+cheat \- create and view interactive cheatsheets for command-line help manuals.
+.SH SYNOPSIS
+.B cheat
+[\fIOPTION\fR] [\fICOMMAND\fR]
+.SH DESCRIPTION
+.HP \w'\fBcheat\fR\ 'u 
+\fBcheat\fR allows you to create and view interactive cheatsheets on the command-line. It 
+was designed to help remind *nix system administrators of options for commands 
+that they use frequently, but not frequently enough to remember.
+.SH OPTIONS
+.B cheat
+invoked with no or incorrect options prints simple usage information. The most common usage of cheat is:
+.RS 2
+
+\fB cheat COMMAND\fR which displays the \fICOMMAND\fR cheatsheet if it exists.
+.RE
+
+The following other options are also used by cheat: 
+
+.RS 2
+\fB -h\fR,\fB --help\fR
+.RS 2
+Prints help
+.RE
+
+\fB -d\fR,\fB--directories\fR 
+.RS 2
+List directories on \fICHEATPATH\fR
+.RE
+
+\fB -e\fR,\fB--edit\fR         
+.RS 2
+Edit \fICOMMAND\fR cheatsheet if it exist, if not an empty one will be created. 
+This is provided that you have an \fIEDITOR\fR environment variable set, otherwise an error message will be displayed.
+.RE
+
+\fB -l\fR,\fB--list\fR
+.RS 2
+List \fICOMMAND\fR cheatsheets
+.RE
+
+\fB -s\fR,\fB--search\fR 
+.RS 2
+Search cheatsheets for \fICOMMAND\fR
+.RE
+
+\fB -v\fR,\fB--version\fR 
+.RS 2
+Print the version number
+.RE
+.RE
+
+.SH FILES
+.B  Enabling Command-line Autocompletion
+
+.RS 2
+
+Scripts to enable command-line autocompletion for various shells can be found 
+online: https://github.com/chrisallenlane/cheat
+ 
+.SH ENVIRONMENT
+.B Setting a DEFAULT_CHEAT_DIR
+
+.RS 2
+
+Personal cheatsheets are saved in the ~/.cheat directory by default, but you 
+can specify a different default by exporting a \fIDEFAULT_CHEAT_DIR\fR 
+environment variable:
+
+.RS 4
+.B export DEFAULT_CHEAT_DIR=/path/to/my/cheats
+
+.RE
+.RE
+
+.B Setting a CHEATPATH
+
+.RS 2
+
+
+You can additionally instruct cheat to look for cheatsheets in other 
+directories by .B exporting a \fICHEATPATH\fR environment variable:
+
+.RS 4
+.B export CHEATPATH=/path/to/my/cheats
+.RE
+
+You may, of course, append multiple directories to your \fICHEATPATH\fR:
+
+.RS 4
+.B export CHEATPATH=$CHEATPATH:/path/to/more/cheats
+
+.RE
+
+You may view which directories are on your \fICHEATPATH\fR with \fBcheat -d\fR.
+
+.RE
+
+
+.B Enabling Syntax Highlighting
+
+.RS 2
+
+cheat can apply syntax highlighting to your cheatsheets if so desired. To 
+enable this feature, set a \fICHEATCOLORS\fR environment variable:
+
+.RS 4
+.B export CHEATCOLORS=true
+.RE
+.RE
+
+.SH COPYRIGHT
+Copyright \(co 2014 Chris Lane.
+
+License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>.
+
+This is free software: you are free to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.
+.SH SEE ALSO
+\fB man\fR(1), \fB info\fR(1), \fB apropos\fR(1), \fB whatis\fR(1)
+.SH BUGS
+Report cheat bugs to https://github.com/chrisallenlane/cheat/issues 
+
+.SH AUTHOR
+Chris Lane (chris@chris-allen-lane.com) 
